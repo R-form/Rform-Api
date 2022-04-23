@@ -3,10 +3,11 @@ import { Controller } from "stimulus";
 export default class extends Controller {
   static targets = ["add_item", "template"];
   // static values = { index: String };
+
   add_association(event) {
     event.preventDefault();
     var content = this.templateTarget.innerHTML.replace(
-      / TEMPLATE_RECORD / g,
+      /TEMPLATE_RECORD/g,
       new Date().getTime()
     );
     this.add_itemTarget.insertAdjacentHTML("beforebegin", content);
