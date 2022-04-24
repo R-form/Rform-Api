@@ -11,9 +11,11 @@
       <% end %>
     </template>
 
+    
     <%= form.fields_for :questions do |question| %>
       <%= render 'question_fields', form: question %>
     <% end %>
+    
 
     <div data-nested-form-target="add_item">
       <%= link_to "Add Question", "#", data: { action: "nested-form#add_association" } %>

@@ -19,6 +19,9 @@ export default class extends Controller {
       case "long_answer":
         this.longTarget.classList.remove("hidden");
         break;
+      case "satisfaction":
+        this.longTarget.classList.remove("hidden");
+        break;
     }
   }
 

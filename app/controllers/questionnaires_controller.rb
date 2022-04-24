@@ -24,7 +24,9 @@ class QuestionnairesController < ApplicationController
   # POST /questionnaires or /questionnaires.json
   def create
     @questionnaire = Questionnaire.new(questionnaire_params)
-
+    p '-'*100
+    p questionnaire_params
+    p '-'*100
     respond_to do |format|
       if @questionnaire.save
         format.html { redirect_to questionnaire_url(@questionnaire), notice: "Questionnaire was successfully created." }
@@ -75,7 +77,11 @@ class QuestionnairesController < ApplicationController
           :id,
           :question_type,
           :name,
-          answers_attributes: [:_destroy, :id, :name]
+          answers_attributes: [
+            :_destroy, 
+            :id, 
+            :name
+          ]
         ]
       )
     end

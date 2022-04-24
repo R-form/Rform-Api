@@ -1,5 +1,3 @@
-
-
 <h1><%= @questionnaire.name %></h1>
 
 <% @questionnaire.questions.each do |question| %>
@@ -22,8 +20,29 @@
     <% end %>
   <% when 'long_answer' %>
     <%= text_area_tag question.id %>
+  <% when 'satisfaction' %>
+  <table>
+    <tr>
+    <% question.answers.each do |answer| %>
+      <td>
+        <%# radio_button_tag question.id, answer.id %>
+        <%= answer.name %>
+      </td>
+    <% end %>
+    </tr>
+    <tr>
+    <% question.answers.each do |answer| %>
+      <td>
+        <%= radio_button_tag question.id, answer.id %>
+        <%# answer.name %>
+      </td>
+    <% end %>
+    </tr>
+  </table>  
   <% end %>
 <% end %>
 
+<div>
 <%= link_to 'Edit', edit_questionnaire_path(@questionnaire) %>
 <%= link_to 'Back', questionnaires_path %>
+</div>
