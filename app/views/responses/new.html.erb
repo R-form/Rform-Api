@@ -1,3 +1,5 @@
+<h1>回答</h1>
+
 <h1><%= @questionnaire.name %></h1>
 
 <% @questionnaire.questions.each do |question| %>
@@ -46,9 +48,7 @@
   <% when 'drop_down_menu' %>
     <%= select_tag question.id %>
       <%= question.answers.each do |answer| %>
-        
           <%= answer.name %>
-        
       <% end %>
   <% when 'range' %>
     <%= range_field_tag question.id %>  
@@ -58,10 +58,4 @@
     <%# image_tag question.id %>  
   <%# end %>
 <% end %>
-
-<div>
-<%= link_to 'New Response', new_questionnaire_response_path(@questionnaire) %>
-<%= link_to 'Edit', edit_questionnaire_path(@questionnaire) %>
-<%= link_to 'Back', questionnaires_path %>
-</div>
 

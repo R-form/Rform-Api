@@ -20,13 +20,36 @@ export default class extends Controller {
         this.longTarget.classList.remove("hidden");
         break;
       case "satisfaction":
-        this.longTarget.classList.remove("hidden");
+        this.choiceTarget.classList.remove("hidden");
         break;
+      case "date":
+        this.dateTarget.classList.remove("hidden");
+        break;
+      case "time":
+        this.timeTarget.classList.remove("hidden");
+        break;
+      case "drop_down_menu":
+        this.choiceTarget.classList.remove("hidden");
+        break;
+      case "range":
+        this.rangeTarget.classList.remove("hidden");
+        break;
+      case "file":
+        this.fileTarget.classList.remove("hidden");
+        break;
+      // case "image":
+      //   this.imageTarget.classList.remove("hidden");
+      //   break;
     }
   }
 
   hideFields() {
     this.choiceTarget.classList.add("hidden");
     this.longTarget.classList.add("hidden");
+    this.dateTarget.classList.add("hidden");
+    this.timeTarget.classList.add("hidden");
+    this.rangeTarget.classList.add("hidden");
+    this.fileTarget.classList.add("hidden");
+    // this.imageTarget.classList.add("hidden");
   }
 }
