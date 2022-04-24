@@ -28,14 +28,11 @@
       <%= render 'answer_fields', form: answer %>
     <% end %>
 
-
     <div data-nested-form-target="add_item">
       <%= link_to "Add Answer", "#", data: { action: "nested-form#add_association" } %>
     </div>
   </div>
   
-
-
   <div data-controller="nested-form" data-dynamic-select-target='long'>
   </div>
 </div>
