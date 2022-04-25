@@ -285,7 +285,10 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   capybara (>= 3.26)
+<<<<<<< HEAD
   dotenv-rails (~> 2.1, >= 2.1.1)
+=======
+>>>>>>> 1e3eed7 (add foreman)
   foreman (~> 0.87.2)
   image_processing (~> 1.2)
   jbuilder (~> 2.7)
