@@ -13,14 +13,18 @@
 # It's strongly recommended that you check this file into your version control system.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20_220_427_121_811) do
 =======
+=======
+>>>>>>> 1885454 (fixed database.yml)
 ActiveRecord::Schema.define(version: 2022_04_27_073509) do
 
 >>>>>>> b8e3bb8 (update database.yml & schema.rb)
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
+<<<<<<< HEAD
   create_table 'active_storage_attachments', force: :cascade do |t|
     t.string 'name', null: false
     t.string 'record_type', null: false
@@ -30,6 +34,14 @@ ActiveRecord::Schema.define(version: 2022_04_27_073509) do
     t.index ['blob_id'], name: 'index_active_storage_attachments_on_blob_id'
     t.index %w[record_type record_id name blob_id], name: 'index_active_storage_attachments_uniqueness',
                                                     unique: true
+=======
+  create_table "answers", force: :cascade do |t|
+    t.bigint "question_id", null: false
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["question_id"], name: "index_answers_on_question_id"
+>>>>>>> 1885454 (fixed database.yml)
   end
 
   create_table 'active_storage_blobs', force: :cascade do |t|
@@ -50,6 +62,7 @@ ActiveRecord::Schema.define(version: 2022_04_27_073509) do
     t.index %w[blob_id variation_digest], name: 'index_active_storage_variant_records_uniqueness', unique: true
   end
 
+<<<<<<< HEAD
   create_table 'answers', force: :cascade do |t|
     t.bigint 'question_id', null: false
     t.string 'name'
@@ -88,4 +101,17 @@ ActiveRecord::Schema.define(version: 2022_04_27_073509) do
   add_foreign_key 'active_storage_variant_records', 'active_storage_blobs', column: 'blob_id'
   add_foreign_key 'answers', 'questions'
   add_foreign_key 'questions', 'questionnaires'
+=======
+  create_table "users", force: :cascade do |t|
+    t.string "email", null: false
+    t.string "crypted_password"
+    t.string "salt"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+  end
+
+  add_foreign_key "answers", "questions"
+  add_foreign_key "questions", "questionnaires"
+>>>>>>> 1885454 (fixed database.yml)
 end
