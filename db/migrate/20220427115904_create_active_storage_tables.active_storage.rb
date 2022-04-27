@@ -1,8 +1,13 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # frozen_string_literal: true
 
 =======
 >>>>>>> b2838ed (issues 18 fix answer hidden issues 20 add soft delete)
+=======
+# frozen_string_literal: true
+
+>>>>>>> 4b98f4d (issues#22 add Robocop to new_form branch)
 # This migration comes from active_storage (originally 20170806125915)
 class CreateActiveStorageTables < ActiveRecord::Migration[5.2]
   def change
@@ -17,10 +22,14 @@ class CreateActiveStorageTables < ActiveRecord::Migration[5.2]
       t.datetime :created_at,   null: false
 
 <<<<<<< HEAD
+<<<<<<< HEAD
       t.index [:key], unique: true
 =======
       t.index [ :key ], unique: true
 >>>>>>> b2838ed (issues 18 fix answer hidden issues 20 add soft delete)
+=======
+      t.index [:key], unique: true
+>>>>>>> 4b98f4d (issues#22 add Robocop to new_form branch)
     end
 
     create_table :active_storage_attachments do |t|
@@ -31,11 +40,16 @@ class CreateActiveStorageTables < ActiveRecord::Migration[5.2]
       t.datetime :created_at, null: false
 
 <<<<<<< HEAD
+<<<<<<< HEAD
       t.index %i[record_type record_id name blob_id], name: 'index_active_storage_attachments_uniqueness',
                                                       unique: true
 =======
       t.index [ :record_type, :record_id, :name, :blob_id ], name: "index_active_storage_attachments_uniqueness", unique: true
 >>>>>>> b2838ed (issues 18 fix answer hidden issues 20 add soft delete)
+=======
+      t.index %i[record_type record_id name blob_id], name: 'index_active_storage_attachments_uniqueness',
+                                                      unique: true
+>>>>>>> 4b98f4d (issues#22 add Robocop to new_form branch)
       t.foreign_key :active_storage_blobs, column: :blob_id
     end
 
@@ -44,10 +58,14 @@ class CreateActiveStorageTables < ActiveRecord::Migration[5.2]
       t.string :variation_digest, null: false
 
 <<<<<<< HEAD
+<<<<<<< HEAD
       t.index %i[blob_id variation_digest], name: 'index_active_storage_variant_records_uniqueness', unique: true
 =======
       t.index %i[ blob_id variation_digest ], name: "index_active_storage_variant_records_uniqueness", unique: true
 >>>>>>> b2838ed (issues 18 fix answer hidden issues 20 add soft delete)
+=======
+      t.index %i[blob_id variation_digest], name: 'index_active_storage_variant_records_uniqueness', unique: true
+>>>>>>> 4b98f4d (issues#22 add Robocop to new_form branch)
       t.foreign_key :active_storage_blobs, column: :blob_id
     end
   end
