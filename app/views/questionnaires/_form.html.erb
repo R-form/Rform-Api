@@ -23,8 +23,12 @@
     </div>
   </div>
 
+  <div data-controller="answer-item" data-answer-item-target="answer">
+    <%= link_to '新增回答', "#", data: { action: "click->answer-item#add_answer" } %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+

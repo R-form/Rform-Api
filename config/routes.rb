@@ -12,4 +12,15 @@ Rails.application.routes.draw do
   get 'login' => 'user_sessions#new', :as => :login
   post 'login' => 'user_sessions#create'
   delete 'logout' => 'user_sessions#destroy', :as => :logout
+
+  namespace :api do
+    namespace :v1 do
+      resource :answers, only: [] do
+        member do
+          get :single
+        end
+      end
+    end
+  end
+  
 end
